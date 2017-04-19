@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Chat from './containers/chat';
+import Loader from './containers/loader';
+import Login from './containers/login';
+import WS from './containers/ws';
 
 class MainComponent extends Component {
   constructor(props) {
@@ -7,7 +11,12 @@ class MainComponent extends Component {
 
   render() {
     return (
-      <div>Hello Chat</div>
+      <div>
+        <Chat/>
+        <Loader/>
+        <Login/>
+        <WS/>
+      </div>
     );
   }
 }
