@@ -5,7 +5,7 @@ import styles from './chat.scss';
 console.error('styles', styles);
 
 const Chat = () => {
-  return <div>Chat</div>
+  return <div className={ styles.riba }>Chat</div>
 };
 
 export default Chat;
