@@ -1,20 +1,32 @@
 import { LOGIN, LOGOUT } from '../constants/login';
+import { post } from '../utils/fetch';
 
 export {
-  login,
-  logout
+  loginUser,
+  logoutUser
 };
 
-function login(user) {
-  return {
-    type: LOGIN,
-    payload: {
-      user
-    }
+function loginUser() {
+  const credentials = {"username":"Vova","pass":"123123"};
+
+
+  return dispatch => {
+    return post('https://front-camp-chat.herokuapp.com/login', credentials).then(response => {
+      return response.json()
+      .then(user => {
+        return dispatch({
+          type: LOGIN,
+          payload: {
+            user
+          }
+        });
+      })
+      .catch(err => console.log(err));
+    });
   };
 }
 
-function logout() {
+function logoutUser() {
   return {
     type: LOGOUT
   };
