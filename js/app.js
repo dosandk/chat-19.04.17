@@ -1,1 +1,1 @@
-console.error('Hello Chat');
+console.error('!!!');
