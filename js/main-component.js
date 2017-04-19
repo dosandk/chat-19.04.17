@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+
 import Chat from './containers/chat';
 import Loader from './containers/loader';
 import Login from './containers/login';
@@ -11,12 +13,14 @@ class MainComponent extends Component {
 
   render() {
     return (
-      <div>
-        <Chat/>
-        <Loader/>
-        <Login/>
-        <WS/>
-      </div>
+      <Provider store={ this.props.store }>
+        <div>
+          <Chat/>
+          <Loader/>
+          <Login/>
+          <WS/>
+        </div>
+      </Provider>
     );
   }
 }

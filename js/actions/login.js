@@ -5,20 +5,17 @@ export {
   logout
 };
 
-function login() {
+function login(user) {
   return {
     type: LOGIN,
     payload: {
-
+      user
     }
   };
 }
 
 function logout() {
   return {
-    type: LOGOUT,
-    payload: {
-
-    }
+    type: LOGOUT
   };
 }

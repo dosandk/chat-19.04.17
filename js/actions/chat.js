@@ -7,37 +7,38 @@ export {
   leftChat
 };
 
-function sendMessage() {
+function sendMessage(msg) {
   return {
     type: SEND_MESSAGE,
     payload: {
-
+      msg
     }
   };
 }
 
-function receiveMessage() {
+function receiveMessage(msg) {
   return {
     type: RECEIVE_MESSAGE,
     payload: {
-
+      msg
     }
   };
 }
 
-function joinChat() {
+function joinChat(user) {
   return {
     type: JOIN_CHAT,
     payload: {
-
+      user
     }
   };
 }
-function leftChat() {
+
+function leftChat(user) {
   return {
     type: LEFT_CHAT,
     payload: {
-
+      user
     }
   };
 }
